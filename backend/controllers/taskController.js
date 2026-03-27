@@ -1,10 +1,18 @@
-const userModel = require("../models/userModel");
+const validator = require("validator");
 const taskModel = require("../models/taskModel");
 
 //create
 const addTask = async (req, res) => {
   try {
     const { title, description} = req.body;
+    //input validation
+     if (!title || validator.isEmpty(title.trim())) {
+      return res.json({
+        success: false,
+        message: "Please fill the title"
+      });
+    }
+    
     const task = new taskModel({ user: req.userId,title,description });
 
     await task.save();
@@ -50,5 +58,5 @@ const deleteTask = async (req, res) => {
   } catch (error) {
     res.json({ success: false, message: error.message });
   }};
-  
+
 module.exports = { addTask,getTasks,updateTask,deleteTask};
