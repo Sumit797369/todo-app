@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
 
-const Home = () => {
+const Home = ({ isLogin, setIsLogin }) => {
 
-  const [isLogin,setIsLogin] = useState(true);
+  
 
   return (
     <div className="min-h-screen flex">

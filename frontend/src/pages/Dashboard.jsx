@@ -1,10 +1,10 @@
 import Navbar from "../components/Navbar";
 
-const Dashboard = () => {
+const Dashboard = ({ setIsLogin }) => {
   return (
     <div>
 
-      <Navbar />
+      <Navbar setIsLogin={setIsLogin} />
 
       <div className="p-8">
         <h2 className="text-2xl font-semibold">

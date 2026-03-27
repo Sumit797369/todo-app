@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setIsLogin }) => {
+   const navigate = useNavigate();
+    const handleLogout = () => {
+    localStorage.removeItem("token");
+    console.log(localStorage.getItem("token"));
+
+    setIsLogin(false);
+    navigate("/home");
+  };
   return (
     <nav className="flex items-center justify-between px-8 py-4 bg-white shadow">
 
@@ -20,7 +29,9 @@ const Navbar = () => {
         />
 
         {/* Logout Button */}
-        <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
+        <button
+        onClick={handleLogout}
+         className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
           Logout
         </button>
 
