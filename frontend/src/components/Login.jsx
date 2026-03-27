@@ -1,14 +1,79 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = ({ setIsLogin }) => {
 
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e)=>{
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  });
+
+    useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      setIsLogin(true);
+      navigate("/dashboard");
+    }
+  }, []);
+
+  const handleChange = (e) => {
+    setLogin({ ...login, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email,password);
-  }
+
+    const { email, password } = login;
+
+    if (!email || !password) {
+      toast.error("All Fields are required");
+      return;
+    }
+
+    if (password.length < 8) {
+      toast.error("Password must be at least 8 characters");
+      return;
+    }
+
+    try {
+
+      const url = "http://localhost:5000/api/user/login";
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(login),
+      });
+
+      const result = await res.json();
+      console.log(result);
+
+      // backend response check
+      if (!result.success) {
+        toast.error(result.message);
+        return;
+      }
+
+      toast.success("Login is successful");
+
+      localStorage.setItem("token", result.token);
+
+      setIsLogin(true);
+
+      // dashboard redirect
+      navigate("/dashboard");
+
+    } catch (error) {
+      toast.error("Something went wrong");
+    }
+  };
 
   return (
     <form
@@ -22,35 +87,38 @@ const Login = ({ setIsLogin }) => {
 
       <input
         type="email"
+        name="email"
         placeholder="Enter email"
         className="w-full border p-3 mb-4 rounded-lg"
-        value={email}
-        onChange={(e)=>setEmail(e.target.value)}
+        value={login.email}
+        onChange={handleChange}
       />
 
       <input
         type="password"
+        name="password"
         placeholder="Enter password"
         className="w-full border p-3 mb-4 rounded-lg"
-        value={password}
-        onChange={(e)=>setPassword(e.target.value)}
+        value={login.password}
+        onChange={handleChange}
       />
 
       <button
+        type="submit"
         className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900"
       >
         Login
       </button>
 
       <p className="text-sm text-center mt-4">
-  Don't have an account? 
-  <span
-    onClick={() => setIsLogin(false)}
-    className="text-gray-500 cursor-pointer ml-1"
-  >
-    Sign Up
-  </span>
-</p>
+        Don't have an account?
+        <span
+          onClick={() => setIsLogin(false)}
+          className="text-gray-500 cursor-pointer ml-1"
+        >
+          Sign Up
+        </span>
+      </p>
 
     </form>
   );

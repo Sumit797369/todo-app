@@ -6,7 +6,8 @@ const connectDB = async(req,res)=>{
         console.log("MOngo connected");
         
     }catch(error){
-        res.status(400).json({message:"Not Connected"})
+        console.log("Database connection error:", error.message);
+    process.exit(1);
         
     }
 }
