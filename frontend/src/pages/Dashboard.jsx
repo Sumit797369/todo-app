@@ -152,13 +152,13 @@ const handleEdit = async (id, updatedData) => {
 };
 
   return (
-    <div>
+    <div className="bg-[#f9f9f9f9]">
       <Navbar setIsLogin={setIsLogin} setSearch={setSearch} />
 
       {/* Todo Form */}
       <Todo addTask={addTask} />
 
-      <div className="p-8">
+      <div className="p-8 ">
         <h2 className="text-2xl font-semibold text-center mb-4">Your Tasks</h2>
 
         {/* Task List */}
