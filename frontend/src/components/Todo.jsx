@@ -44,7 +44,7 @@ const Todo = ({ addTask }) => {
   return (
     <div className="flex justify-center mt-6">
 
-      <form onSubmit={handleAdd} className="bg-white p-5 rounded shadow w-300">
+      <form onSubmit={handleAdd} className="bg-white p-4 sm:p-5 rounded shadow w-full max-w-md">
 
       
 
@@ -66,7 +66,7 @@ const Todo = ({ addTask }) => {
           className="w-full border p-2 mb-3 rounded"
         />
 
-        <button className="w-50 bg-black text-white py-2 rounded">
+        <button className="w-full bg-black text-white py-2 rounded">
           Add Task
         </button>
 

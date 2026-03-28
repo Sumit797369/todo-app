@@ -152,13 +152,13 @@ const handleEdit = async (id, updatedData) => {
 };
 
   return (
-    <div className="bg-[#f9f9f9f9]">
+    <div className="min-h-screen bg-[#f9f9f9f9]">
       <Navbar setIsLogin={setIsLogin} setSearch={setSearch} />
 
       {/* Todo Form */}
       <Todo addTask={addTask} />
 
-      <div className="p-8 ">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <h2 className="text-2xl font-semibold text-center mb-4">Your Tasks</h2>
 
         {/* Task List */}
@@ -174,7 +174,7 @@ const handleEdit = async (id, updatedData) => {
       />
     ) : null
   )}
-  <div className="flex justify-center gap-4 mt-6">
+  <div className="flex flex-wrap justify-center gap-3 mt-6">
 
     <button
       onClick={() => setCurrentPage(currentPage - 1)}

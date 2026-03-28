@@ -11,7 +11,7 @@ const Navbar = ({ setIsLogin,setSearch }) => {
     navigate("/home");
   };
   return (
-    <nav className="flex items-center justify-between px-8 py-4 bg-white shadow">
+    <nav className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 bg-white shadow gap-3">
 
       {/* Logo */}
       <h1 className="text-2xl font-bold text-black">
@@ -26,7 +26,7 @@ const Navbar = ({ setIsLogin,setSearch }) => {
           type="text"
           placeholder="Search tasks..."
           onChange={(e) => setSearch(e.target.value)}
-          className="border rounded-lg px-2 py-2 outline-none focus:ring-1 focus:ring-black"
+          className="border rounded-lg px-3 py-2 w-full sm:w-64"
         />
 
         {/* Logout Button */}

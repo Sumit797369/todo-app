@@ -51,7 +51,7 @@ const TodoCards = ({ task, onDelete, onComplete,onEdit }) => {
         </>
       )}
 
-      <div className="mt-3 flex gap-2">
+      <div className="mt-3 flex flex-wrap gap-2">
 
         <button
           onClick={() => onComplete(task._id, task.completed)}
