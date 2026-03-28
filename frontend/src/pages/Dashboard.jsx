@@ -28,7 +28,7 @@ const currentTasks = filteredTasks.slice(indexOfFirstTask, indexOfLastTask);
       try {
        
 
-        const res = await fetch("http://localhost:5000/api/tasks", {
+        const res = await fetch("https://todo-app-1-k0d4.onrender.com/api/tasks", {
           headers: {
             Authorization: `Bearer ${token}`
 
@@ -51,7 +51,7 @@ const addTask = async (task) => {
 
   try {
 
-    const res = await fetch("http://localhost:5000/api/tasks/addTask", {
+    const res = await fetch("https://todo-app-1-k0d4.onrender.com/api/tasks/addTask", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const addTask = async (task) => {
   // delete task
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/tasks/deleteTask/${id}`, {
+      await fetch(`https://todo-app-1-k0d4.onrender.com/api/tasks/deleteTask/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ const addTask = async (task) => {
   // complete task
   const handleComplete = async (id, currentStatus) => {
     try {
-      await fetch(`http://localhost:5000/api/tasks/updateTask/${id}`, {
+      await fetch(`https://todo-app-1-k0d4.onrender.com/api/tasks/updateTask/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -122,7 +122,7 @@ const handleEdit = async (id, updatedData) => {
   try {
 
     const res = await fetch(
-      `http://localhost:5000/api/tasks/updateTask/${id}`,
+      `https://todo-app-1-k0d4.onrender.com/api/tasks/updateTask/${id}`,
       {
         method: "PUT",
         headers: {

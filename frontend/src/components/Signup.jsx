@@ -32,7 +32,7 @@ const Signup = ({ setIsLogin }) => {
     return;
   }
     try {
-      const url="http://localhost:5000/api/user/register";
+      const url="https://todo-app-1-k0d4.onrender.com/api/user/register";
       const res= await fetch(url,{
         method:'POST',
         headers:{
