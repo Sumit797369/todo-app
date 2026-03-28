@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import { useState } from 'react'
+import Todo from './components/Todo'
 
 const App = () => {
   const [isLogin,setIsLogin] = useState(true);
@@ -19,6 +20,7 @@ const App = () => {
     <Route path="/signup" element={<Signup/>}/>
     <Route path="/home" element={<Home isLogin={isLogin} setIsLogin={setIsLogin} />}/>
     <Route path="/dashboard" element={<Dashboard setIsLogin={setIsLogin} />} />
+    {/* <Route path="/todo" element={<Todo />} /> */}
 
       </Routes>
     </div>

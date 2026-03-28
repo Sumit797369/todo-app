@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ setIsLogin }) => {
+const Navbar = ({ setIsLogin,setSearch }) => {
    const navigate = useNavigate();
     const handleLogout = () => {
     localStorage.removeItem("token");
-    console.log(localStorage.getItem("token"));
+    // console.log(localStorage.getItem("token"));
 
     setIsLogin(false);
     navigate("/home");
@@ -25,7 +25,8 @@ const Navbar = ({ setIsLogin }) => {
         <input
           type="text"
           placeholder="Search tasks..."
-          className="border  rounded-lg px-4 py-2 outline-none focus:ring-1 focus:ring-black"
+          onChange={(e) => setSearch(e.target.value)}
+          className="border rounded-lg px-2 py-2 outline-none focus:ring-1 focus:ring-black"
         />
 
         {/* Logout Button */}
