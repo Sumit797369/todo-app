@@ -10,7 +10,11 @@ const PORT = process.env.PORT || 5000
 connectDB()
 
 app.use(express.json());
-app.use(cors())
+
+app.use(cors({
+  origin: "https://todo-app-green-alpha-38.vercel.app",
+  credentials: true
+}));
 
 app.use('/api/user',userRouter);
 app.use("/api/tasks", taskRouter);
