@@ -51,7 +51,7 @@ const addTask = async (task) => {
 
   try {
 
-    const res = await fetch("https://todo-app-1-k0d4.onrender.com/api/tasks/addTask", {
+    const res = await fetch("https://todo-app-1-k0d4.onrender.com/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const addTask = async (task) => {
   // delete task
   const handleDelete = async (id) => {
     try {
-      await fetch(`https://todo-app-1-k0d4.onrender.com/api/tasks/deleteTask/${id}`, {
+      await fetch(`https://todo-app-1-k0d4.onrender.com/api/tasks/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ const addTask = async (task) => {
   // complete task
   const handleComplete = async (id, currentStatus) => {
     try {
-      await fetch(`https://todo-app-1-k0d4.onrender.com/api/tasks/updateTask/${id}`, {
+      await fetch(`https://todo-app-1-k0d4.onrender.com/api/tasks/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
