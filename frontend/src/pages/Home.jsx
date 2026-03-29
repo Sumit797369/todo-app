@@ -37,7 +37,7 @@ const Home = () => {
     <div className="min-h-screen flex">
 
       {/* Left Section */}
-      <div className="w-1/2 bg-black text-white flex flex-col justify-center items-center p-10">
+      <div className="w-full bg-black text-white flex flex-col justify-center items-center p-10">
         <h1 className="text-5xl font-bold mb-4">Welcome to Todo App</h1>
 
         <div className="mt-6 flex gap-4">
@@ -58,9 +58,9 @@ const Home = () => {
       </div>
 
       {/* Right Section */}
-      <div className="w-1/2 flex justify-center items-center bg-gray-100">
+      {/* <div className="w-1/2 flex justify-center items-center bg-gray-100">
         <p>Select Login or Signup</p>
-      </div>
+      </div> */}
 
     </div>
   );
