@@ -9,8 +9,8 @@ import Todo from './components/Todo'
 
 const App = () => {
   const [isLogin,setIsLogin] = useState(true);
-  // isLogin={isLogin} setIsLogin={setIsLogin}
-  // setIsLogin={setIsLogin}
+  // 
+  // 
   return (
     <div>
       {/* <Home/> */}
@@ -19,8 +19,8 @@ const App = () => {
     <Route path="/" element={<Navigate to="/home"/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element={<Signup/>}/>
-    <Route path="/home" element={<Home  />}/>
-    <Route path="/dashboard" element={<Dashboard  />} />
+    <Route path="/home" element={<Home isLogin={isLogin} setIsLogin={setIsLogin}  />}/>
+    <Route path="/dashboard" element={<Dashboard setIsLogin={setIsLogin} />} />
     {/* <Route path="/todo" element={<Todo />} /> */}
 
       </Routes>
