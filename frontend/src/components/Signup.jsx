@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Await, Link } from "react-router-dom";
+import { Await, Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Signup = ({ setIsLogin }) => {
@@ -13,7 +13,8 @@ const Signup = ({ setIsLogin }) => {
     password: "",
   });
 
-  
+   const navigate = useNavigate();
+   
   const handleChange = (e) => {
     e.preventDefault();
     setSignup({ ...signup, [e.target.name]: e.target.value });
@@ -94,9 +95,13 @@ const Signup = ({ setIsLogin }) => {
 
       <p className="text-sm text-center mt-4">
         Already have an account?
-        <span
+        {/* <span
           onClick={() => setIsLogin(true)}
           className="text-gray-500 cursor-pointer ml-1"
+        > */}
+        <span 
+          onClick={() => navigate("/login")}
+          style={{ cursor: "pointer", color: "blue" }}
         >
           Login
         </span>
