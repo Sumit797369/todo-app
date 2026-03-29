@@ -14,7 +14,7 @@ const Signup = ({ setIsLogin }) => {
   });
 
    const navigate = useNavigate();
-   
+
   const handleChange = (e) => {
     e.preventDefault();
     setSignup({ ...signup, [e.target.name]: e.target.value });
@@ -53,6 +53,7 @@ const Signup = ({ setIsLogin }) => {
   }
 
   return (
+    <div className="min-h-screen flex justify-center items-center bg-gray-100">
     <form
       onSubmit={handleSubmit}
       className="bg-white p-8 rounded-xl shadow-md w-96" >
@@ -107,6 +108,7 @@ const Signup = ({ setIsLogin }) => {
         </span>
       </p>
     </form>
+    </div>
   );
 };
 
