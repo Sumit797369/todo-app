@@ -42,7 +42,7 @@ const Login = ({ setIsLogin }) => {
 
     try {
 
-      const url = "https://todo-app-1-k0d4.onrender.com/api/user/login";
+      const url = "https://todo-app-1-k0d4.onrender.com/api/auth/login";
 
       const res = await fetch(url, {
         method: "POST",
