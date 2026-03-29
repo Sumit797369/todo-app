@@ -112,10 +112,7 @@ const Login = ({ setIsLogin }) => {
 
       <p className="text-sm text-center mt-4">
         Don't have an account?
-        {/* <span
-          onClick={() => setIsLogin(false)}
-          className="text-gray-500 cursor-pointer ml-1"
-        > */}
+        
          <span 
           onClick={() => navigate("/signup")}
           style={{ cursor: "pointer", color: "blue" }}
