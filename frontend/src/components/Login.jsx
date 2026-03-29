@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const Login = ({ setIsLogin }) => {
+const Login = () => {
 
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ const Login = ({ setIsLogin }) => {
     const token = localStorage.getItem("token");
 
     if (token) {
-      setIsLogin(true);
+      // setIsLogin(true);
       navigate("/dashboard");
     }
   }, []);
@@ -65,7 +65,7 @@ const Login = ({ setIsLogin }) => {
 
       localStorage.setItem("token", result.token);
 
-      setIsLogin(true);
+      // setIsLogin(true);
 
       // dashboard redirect
       navigate("/dashboard");
