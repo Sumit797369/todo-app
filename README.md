@@ -33,6 +33,7 @@ A full-stack To-Do application built with authentication and complete CRUD funct
 
 * Node.js
 * Express.js
+* RESTful API design 
 * MongoDB (Mongoose)
 
 ### Authentication
