@@ -67,8 +67,9 @@ const addTask = async (task) => {
 
     if (data.success && data.task) {
       setTasks((prev) => [...prev, data.task]);
+      toast.success("Task added successfully ✅");
     } else {
-      alert("Task not added");
+      toast.error("Task not added ❌");
     }
 
   } catch (err) {
@@ -89,6 +90,7 @@ const addTask = async (task) => {
       });
 
       setTasks(tasks.filter((task) => task._id !== id));
+      toast.success("Task deleted 🗑️");
     } catch (err) {
       console.log(err);
     }
@@ -174,8 +176,8 @@ const handleEdit = async (id, updatedData) => {
     </div>
 
     {/* Tasks Grid */}
-    <div className="max-h-[60vh] overflow-y-auto pr-2">
-    <div className="flex flex-col gap-3">
+    <div className="max-h-[55vh] overflow-y-auto ">
+    <div className="flex flex-col gap-2">
       {Array.isArray(tasks) &&
         currentTasks.map((task) =>
           task ? (

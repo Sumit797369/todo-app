@@ -42,7 +42,7 @@ const Todo = ({ addTask }) => {
   };
 
   return (
-  <div className="mt-6">
+  <div className="mt-3">
     <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
       Add New Task
     </h2>
