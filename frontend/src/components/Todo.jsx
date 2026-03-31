@@ -66,14 +66,14 @@ const Todo = ({ addTask }) => {
     </div>
 
     {/* Description */}
-    <div className="mb-4">
+    <div className="mb-2">
       <label className="text-sm text-gray-600">Description</label>
       <textarea
         name="description"
         placeholder="Enter description"
         value={data.description}
         onChange={handleInput}
-        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition resize-none"
+        className="w-full mt-1 border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition resize-none"
         rows="3"
       />
     </div>
