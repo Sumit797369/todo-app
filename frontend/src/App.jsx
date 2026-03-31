@@ -17,12 +17,11 @@ const App = () => {
       {/* <Dashboard/> */}
       <Routes>
     <Route path="/" element={<Navigate to="/login"/>}/>
-    <Route path="/login" element={<Login/>}/>
+    <Route path="/login"  element={ isLogin ? <Navigate to="/dashboard"/> : <Login setIsLogin={setIsLogin}/> } />
     <Route path="/signup" element={<Signup/>}/>
-    <Route path="/home" element={<Home isLogin={isLogin} setIsLogin={setIsLogin}  />}/>
-    <Route path="/dashboard" element={<Dashboard setIsLogin={setIsLogin} />} />
-    {/* <Route path="/todo" element={<Todo />} /> */}
-
+    {/* <Route path="/home" element={<Home isLogin={isLogin} setIsLogin={setIsLogin}  />}/> */}
+    <Route path="/dashboard" element={ isLogin ? <Dashboard setIsLogin={setIsLogin}/> : <Navigate to="/login"/> }  />
+  
       </Routes>
     </div>
   )
