@@ -52,7 +52,7 @@ const Signup = ({ setIsLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+   <div className="min-h-screen flex items-center justify-center bg-gray-100">
   <form
     onSubmit={handleSubmit}
     className="bg-white p-8 rounded-xl shadow-md w-96"
