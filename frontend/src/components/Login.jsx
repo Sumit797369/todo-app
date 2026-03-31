@@ -79,11 +79,11 @@ const Login = ({ setIsLogin }) => {
     className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl rounded-2xl p-8 w-96"
   >
     {/* Heading */}
-    <h2 className="text-2xl font-bold text-center text-white mb-2">
-      Login
+    <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">
+      Welcome Back 👋
     </h2>
-    <p className="text-center text-gray-400 text-sm mb-6">
-      Enter your credentials
+    <p className="text-sm text-gray-500 text-center mb-6">
+      Login to your account
     </p>
 
     {/* Email */}
