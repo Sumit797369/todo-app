@@ -42,48 +42,44 @@ const Todo = ({ addTask }) => {
   };
 
   return (
-   <div className="flex justify-center mt-6">
+  <div className="flex justify-center mt-4">
   <form
     onSubmit={handleAdd}
-    className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md"
+    className="bg-white shadow-md rounded-xl px-4 py-3 w-full max-w-3xl"
   >
-    {/* Heading */}
-    <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
-      Add New Task
-    </h2>
+    <div className="flex flex-col sm:flex-row gap-3 items-center">
 
-    {/* Title */}
-    <div className="mb-4">
-      <label className="text-sm text-gray-600">Title</label>
+      {/* Title */}
       <input
         type="text"
         name="title"
-        placeholder="Enter title"
+        placeholder="Title"
         value={data.title}
         onChange={handleInput}
-        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
+        className="flex-1 border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm"
       />
-    </div>
 
-    {/* Description */}
-    <div className="mb-2">
-      <label className="text-sm text-gray-600">Description</label>
+      {/* Description (auto expand) */}
       <textarea
         name="description"
-        placeholder="Enter description"
+        placeholder="Description"
         value={data.description}
-        onChange={handleInput}
-        className="w-full mt-1 border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition resize-none"
-        rows="3"
+        onChange={(e) => {
+          handleInput(e);
+          e.target.style.height = "auto";
+          e.target.style.height = e.target.scrollHeight + "px";
+        }}
+        rows="1"
+        className="flex-1 border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm resize-none overflow-hidden"
       />
-    </div>
 
-    {/* Button */}
-    <button
-      className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md hover:shadow-lg active:scale-95"
-    >
-      Add Task
-    </button>
+      {/* Button */}
+      <button
+        className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition text-sm whitespace-nowrap"
+      >
+        Add
+      </button>
+    </div>
   </form>
 </div>
   );
