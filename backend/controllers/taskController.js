@@ -1,7 +1,7 @@
 const validator = require("validator");
 const taskModel = require("../models/taskModel");
 
-//create
+
 const addTask = async (req, res) => {
   try {
     const { title, description} = req.body;
@@ -22,7 +22,7 @@ const addTask = async (req, res) => {
     res.json({ success: false, message: error.message });
   }};
 
-// read
+
 const getTasks = async (req, res) => {
   try {
     const tasks = await taskModel.find({ user: req.userId });
@@ -31,7 +31,7 @@ const getTasks = async (req, res) => {
     res.json({ success: false, message: error.message });
   }};
 
-// update
+
 const updateTask = async (req, res) => {
   try {
     const { id } = req.params;
@@ -47,7 +47,7 @@ const updateTask = async (req, res) => {
     res.json({ success: false, message: error.message });
   }};
 
-// delete
+
 const deleteTask = async (req, res) => {
   try {
     const { id } = req.params;

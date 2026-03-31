@@ -8,7 +8,7 @@ const Todo = ({ addTask }) => {
     description: ""
   });
 
-  // const [error, setError] = useState("");
+  
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -17,7 +17,7 @@ const Todo = ({ addTask }) => {
       ...data,
       [name]: value
     });
-    setError("");
+    
   };
 
   const handleAdd = (e) => {
@@ -32,13 +32,13 @@ const Todo = ({ addTask }) => {
       return;
     }
 
-    addTask(data); // ✅ backend call
+    addTask(data); 
 
     setData({
       title: "",
       description: ""
     });
-    setError("");
+    
   };
 
   return (

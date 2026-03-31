@@ -8,7 +8,7 @@ const Navbar = ({ setIsLogin,setSearch }) => {
     // console.log(localStorage.getItem("token"));
 
     setIsLogin(false);
-    navigate("/home");
+    navigate("/login");
   };
   return (
     <nav className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 bg-white shadow gap-3">

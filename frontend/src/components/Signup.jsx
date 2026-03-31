@@ -3,9 +3,6 @@ import { Await, Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Signup = ({ setIsLogin }) => {
-  // const [name,setName] = useState("");
-  // const [email,setEmail] = useState("");
-  // const [password,setPassword] = useState("");
 
   const [signup, setSignup] = useState({
     username: "",
@@ -16,7 +13,7 @@ const Signup = ({ setIsLogin }) => {
    const navigate = useNavigate();
 
   const handleChange = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setSignup({ ...signup, [e.target.name]: e.target.value });
   };
 

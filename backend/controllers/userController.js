@@ -7,12 +7,11 @@ const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET);
 
 };
-// route for login user
+
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // checking user exist or not
     const user = await userModel.findOne({ email });
 
     if (!user) {
@@ -34,12 +33,11 @@ const loginUser = async (req, res) => {
 };
 
 
-// route for register user
+
 const registerUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    // checking user already exist or not
     const existingUser = await userModel.findOne({ email });
 
     if (existingUser) {
