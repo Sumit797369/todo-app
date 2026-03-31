@@ -76,44 +76,44 @@ const Login = ({ setIsLogin }) => {
 <div className="min-h-screen flex items-center justify-center bg-black">
   <form
     onSubmit={handleSubmit}
-    className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl rounded-2xl p-8 w-96"
+    className="bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] rounded-2xl p-8 w-96"
   >
     {/* Heading */}
-    <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">
-      Welcome Back 👋
+    <h2 className="text-2xl font-bold text-center text-white mb-2">
+      Welcome Back
     </h2>
-    <p className="text-sm text-gray-500 text-center mb-6">
-      Login to your account
+    <p className="text-center text-white/60 text-sm mb-6">
+      Login to continue
     </p>
 
     {/* Email */}
     <div className="mb-4">
-      <label className="text-sm text-gray-300">Email</label>
+      <label className="text-sm text-white/70">Email</label>
       <input
         type="email"
         name="email"
         placeholder="Enter your email"
         value={login.email}
         onChange={handleChange}
-        className="w-full mt-1 p-3 rounded-lg bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+        className="w-full mt-1 p-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/40 backdrop-blur-md"
       />
     </div>
 
     {/* Password */}
     <div className="mb-4 relative">
-      <label className="text-sm text-gray-300">Password</label>
+      <label className="text-sm text-white/70">Password</label>
       <input
         type={showPassword ? "text" : "password"}
         name="password"
         placeholder="Enter your password"
         value={login.password}
         onChange={handleChange}
-        className="w-full mt-1 p-3 pr-16 rounded-lg bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+        className="w-full mt-1 p-3 pr-16 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/40 backdrop-blur-md"
       />
 
       <span
         onClick={() => setShowPassword(!showPassword)}
-        className="absolute right-4 top-[38px] cursor-pointer text-sm text-gray-400 hover:text-white"
+        className="absolute right-4 top-[38px] cursor-pointer text-sm text-white/60 hover:text-white"
       >
         {showPassword ? "Hide" : "Show"}
       </span>
@@ -122,13 +122,13 @@ const Login = ({ setIsLogin }) => {
     {/* Button */}
     <button
       type="submit"
-      className="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition duration-200"
+      className="w-full bg-white/90 text-black py-3 rounded-lg font-semibold hover:bg-white transition duration-200 backdrop-blur-md"
     >
       Login
     </button>
 
     {/* Footer */}
-    <p className="text-sm text-center mt-5 text-gray-400">
+    <p className="text-sm text-center mt-5 text-white/60">
       Don’t have an account?
       <span
         onClick={() => navigate("/signup")}
