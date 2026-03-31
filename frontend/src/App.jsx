@@ -8,7 +8,15 @@ import { useState } from 'react'
 import Todo from './components/Todo'
 
 const App = () => {
-  const [isLogin,setIsLogin] = useState(true);
+  const [isLogin,setIsLogin] = useState(false);
+   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, []);
   // 
   // 
   return (
