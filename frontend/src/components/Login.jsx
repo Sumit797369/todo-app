@@ -73,17 +73,17 @@ const Login = ({ setIsLogin }) => {
   };
 
   return (
- <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300">
+<div className="min-h-screen flex items-center justify-center bg-gray-100">
   <form
     onSubmit={handleSubmit}
-    className="bg-white/80 backdrop-blur-lg border border-gray-200 shadow-xl rounded-2xl p-8 w-96"
+    className="bg-white rounded-2xl shadow-xl p-8 w-96"
   >
-    {/* Heading */}
-    <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">
-      Welcome Back 👋
+    {/* Logo / Title */}
+    <h2 className="text-2xl font-bold text-center text-gray-800">
+      Welcome Back
     </h2>
-    <p className="text-sm text-gray-500 text-center mb-6">
-      Login to your account
+    <p className="text-center text-gray-500 text-sm mb-6">
+      Please login to continue
     </p>
 
     {/* Email */}
@@ -93,22 +93,22 @@ const Login = ({ setIsLogin }) => {
         type="email"
         name="email"
         placeholder="Enter your email"
-        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
         value={login.email}
         onChange={handleChange}
+        className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
     </div>
 
     {/* Password */}
-    <div className="mb-4 relative">
+    <div className="mb-2 relative">
       <label className="text-sm text-gray-600">Password</label>
       <input
         type={showPassword ? "text" : "password"}
         name="password"
         placeholder="Enter your password"
-        className="w-full mt-1 border border-gray-300 p-3 pr-16 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
         value={login.password}
         onChange={handleChange}
+        className="w-full mt-1 p-3 pr-16 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
       <span
@@ -119,22 +119,52 @@ const Login = ({ setIsLogin }) => {
       </span>
     </div>
 
-    {/* Button */}
+    {/* Forgot password */}
+    <div className="text-right mb-4">
+      <span className="text-sm text-blue-500 cursor-pointer hover:underline">
+        Forgot password?
+      </span>
+    </div>
+
+    {/* Login Button */}
     <button
       type="submit"
-      className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md hover:shadow-lg"
+      className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition shadow-md"
     >
       Login
     </button>
 
-    {/* Footer */}
-    <p className="text-sm text-center mt-5 text-gray-600">
-      Don't have an account?
+    {/* Divider */}
+    <div className="flex items-center my-5">
+      <hr className="flex-grow border-gray-300" />
+      <span className="mx-2 text-gray-400 text-sm">OR</span>
+      <hr className="flex-grow border-gray-300" />
+    </div>
+
+    {/* Social Login */}
+    <div className="flex gap-3">
+      <button
+        type="button"
+        className="w-full border py-2 rounded-lg hover:bg-gray-100 transition"
+      >
+        Google
+      </button>
+      <button
+        type="button"
+        className="w-full border py-2 rounded-lg hover:bg-gray-100 transition"
+      >
+        Facebook
+      </button>
+    </div>
+
+    {/* Signup */}
+    <p className="text-center text-sm text-gray-600 mt-6">
+      Don’t have an account?
       <span
         onClick={() => navigate("/signup")}
-        className="ml-1 text-black font-medium cursor-pointer hover:underline"
+        className="text-blue-600 cursor-pointer ml-1 hover:underline"
       >
-        Sign Up
+        Sign up
       </span>
     </p>
   </form>
