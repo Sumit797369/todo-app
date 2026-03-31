@@ -174,6 +174,7 @@ const handleEdit = async (id, updatedData) => {
     </div>
 
     {/* Tasks Grid */}
+    <div className="max-h-[60vh] overflow-y-auto pr-2">
     <div className="flex flex-col gap-3">
       {Array.isArray(tasks) &&
         currentTasks.map((task) =>
@@ -189,6 +190,7 @@ const handleEdit = async (id, updatedData) => {
             </div>
           ) : null
         )}
+    </div>
     </div>
 
     {/* Empty State */}
