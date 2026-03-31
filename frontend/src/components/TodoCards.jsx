@@ -20,7 +20,7 @@ const TodoCards = ({ task, onDelete, onComplete,onEdit }) => {
   };
 
   return (
- <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-200 p-3">
+ <div >
 
   {isEditing ? (
     <>
