@@ -10,14 +10,14 @@ import { useEffect } from 'react'
 
 const App = () => {
   const [isLogin,setIsLogin] = useState(false);
-  //  useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     setIsLogin(true);
-  //   } else {
-  //     setIsLogin(false);
-  //   }
-  // }, []);
+   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, []);
   
   // 
   // 
