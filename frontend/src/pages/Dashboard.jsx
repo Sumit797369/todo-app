@@ -177,7 +177,7 @@ const handleEdit = async (id, updatedData) => {
     </div>
 
     {/* Tasks Grid */}
-    <div className="max-h-[55vh] overflow-y-auto ">
+    <div className="max-h-[55vh] ">
     <div className="flex flex-col gap-2">
       {Array.isArray(tasks) &&
         currentTasks.map((task) =>
