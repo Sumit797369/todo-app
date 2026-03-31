@@ -42,37 +42,50 @@ const Todo = ({ addTask }) => {
   };
 
   return (
-    <div className="flex justify-center mt-6">
+   <div className="flex justify-center mt-6">
+  <form
+    onSubmit={handleAdd}
+    className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md"
+  >
+    {/* Heading */}
+    <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+      Add New Task
+    </h2>
 
-      <form onSubmit={handleAdd} className="bg-white p-4 sm:p-5 rounded shadow w-full max-w-md">
-
-      
-
-        <h3>Title</h3>
-        <input
-          type="text"
-          name="title"
-          placeholder="Enter title"
-          value={data.title}
-          onChange={handleInput}
-          className="w-full border p-2 mb-3 rounded"
-        />
-        <h3>description</h3>
-        <textarea
-          name="description"
-          placeholder="Enter description"
-          value={data.description}
-          onChange={handleInput}
-          className="w-full border p-2 mb-3 rounded"
-        />
-
-        <button className="w-full bg-black text-white py-2 rounded">
-          Add Task
-        </button>
-
-      </form>
-
+    {/* Title */}
+    <div className="mb-4">
+      <label className="text-sm text-gray-600">Title</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter title"
+        value={data.title}
+        onChange={handleInput}
+        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
+      />
     </div>
+
+    {/* Description */}
+    <div className="mb-4">
+      <label className="text-sm text-gray-600">Description</label>
+      <textarea
+        name="description"
+        placeholder="Enter description"
+        value={data.description}
+        onChange={handleInput}
+        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition resize-none"
+        rows="3"
+      />
+    </div>
+
+    {/* Button */}
+    <button
+      className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md hover:shadow-lg active:scale-95"
+    >
+      Add Task
+    </button>
+  </form>
+</div>
   );
 };
 
