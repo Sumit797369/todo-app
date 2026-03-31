@@ -73,47 +73,47 @@ const Login = ({ setIsLogin }) => {
   };
 
   return (
-<div className="min-h-screen flex items-center justify-center bg-black">
+<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300">
   <form
     onSubmit={handleSubmit}
-    className="bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] rounded-2xl p-8 w-96"
+    className="bg-white/80 backdrop-blur-lg border border-gray-200 shadow-xl rounded-2xl p-8 w-96"
   >
     {/* Heading */}
-    <h2 className="text-2xl font-bold text-center text-white mb-2">
-      Welcome Back
+    <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">
+      Welcome Back 👋
     </h2>
-    <p className="text-center text-white/60 text-sm mb-6">
-      Login to continue
+    <p className="text-sm text-gray-500 text-center mb-6">
+      Login to your account
     </p>
 
     {/* Email */}
     <div className="mb-4">
-      <label className="text-sm text-white/70">Email</label>
+      <label className="text-sm text-gray-600">Email</label>
       <input
         type="email"
         name="email"
         placeholder="Enter your email"
+        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
         value={login.email}
         onChange={handleChange}
-        className="w-full mt-1 p-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/40 backdrop-blur-md"
       />
     </div>
 
     {/* Password */}
     <div className="mb-4 relative">
-      <label className="text-sm text-white/70">Password</label>
+      <label className="text-sm text-gray-600">Password</label>
       <input
         type={showPassword ? "text" : "password"}
         name="password"
         placeholder="Enter your password"
+        className="w-full mt-1 border border-gray-300 p-3 pr-16 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
         value={login.password}
         onChange={handleChange}
-        className="w-full mt-1 p-3 pr-16 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/40 backdrop-blur-md"
       />
 
       <span
         onClick={() => setShowPassword(!showPassword)}
-        className="absolute right-4 top-[38px] cursor-pointer text-sm text-white/60 hover:text-white"
+        className="absolute right-4 top-[38px] cursor-pointer text-sm text-gray-500 hover:text-black"
       >
         {showPassword ? "Hide" : "Show"}
       </span>
@@ -122,19 +122,19 @@ const Login = ({ setIsLogin }) => {
     {/* Button */}
     <button
       type="submit"
-      className="w-full bg-white/90 text-black py-3 rounded-lg font-semibold hover:bg-white transition duration-200 backdrop-blur-md"
+      className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md hover:shadow-lg"
     >
       Login
     </button>
 
     {/* Footer */}
-    <p className="text-sm text-center mt-5 text-white/60">
-      Don’t have an account?
+    <p className="text-sm text-center mt-5 text-gray-600">
+      Don't have an account?
       <span
         onClick={() => navigate("/signup")}
-        className="ml-1 text-white cursor-pointer hover:underline"
+        className="ml-1 text-black font-medium cursor-pointer hover:underline"
       >
-        Sign up
+        Sign Up
       </span>
     </p>
   </form>
