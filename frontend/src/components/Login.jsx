@@ -97,7 +97,12 @@ const Login = ({ setIsLogin }) => {
           value={login.password}
           onChange={handleChange}
         />
-       
+       <span
+          onClick={() => setShowPassword(!showPassword)}
+          className="absolute right-3 top-3 cursor-pointer text-sm text-gray-600"
+        >gloo
+          {showPassword ? "Hide" : "Show"}
+        </span>
         <button
           type="submit"
           className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900"
