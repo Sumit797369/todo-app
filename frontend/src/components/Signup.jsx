@@ -52,67 +52,69 @@ const Signup = ({ setIsLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-xl shadow-md w-96"
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+  <form
+    onSubmit={handleSubmit}
+    className="bg-white p-8 rounded-xl shadow-md w-96"
+  >
+    <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+
+    {/* Username */}
+    <input
+      type="text"
+      name="username"
+      placeholder="Enter name"
+      className="w-full border p-3 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+      value={signup.username}
+      onChange={handleChange}
+    />
+
+    {/* Email */}
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter email"
+      className="w-full border p-3 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+      value={signup.email}
+      onChange={handleChange}
+    />
+
+    {/* Password */}
+    <div className="relative mb-4">
+      <input
+        type={showPassword ? "text" : "password"}
+        name="password"
+        placeholder="Enter password"
+        className="w-full border p-3 pr-16 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+        value={signup.password}
+        onChange={handleChange}
+      />
+
+      <span
+        onClick={() => setShowPassword(!showPassword)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-sm text-gray-600 hover:text-black"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-
-        <input
-          type="text"
-          name="username"
-          placeholder="Enter name"
-          className="w-full border p-3 mb-4 rounded-lg"
-          value={signup.username}
-          // onChange={(e)=>setName(e.target.value)}
-          onChange={handleChange}
-        />
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter email"
-          className="w-full border p-3 mb-4 rounded-lg"
-          value={signup.email}
-          // onChange={(e)=>setEmail(e.target.value)}
-          onChange={handleChange}
-        />
-
-        <input
-          type={showPassword ? "text" : "password"}
-          name="password"
-          placeholder="Enter password"
-          className="w-full border p-3 mb-4 rounded-lg"
-          value={signup.password}
-          // onChange={(e)=>setPassword(e.target.value)}
-          onChange={handleChange}
-        />
-        <span
-          onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-3 top-3 cursor-pointer text-sm text-gray-600"
-        >gloo
-          {showPassword ? "Hide" : "Show"}
-        </span>
-        <button className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900">
-          Create Account
-        </button>
-
-        <p className="text-sm text-center mt-4">
-          Already have an account?
-          {/* <span
-          onClick={() => setIsLogin(true)}
-          className="text-gray-500 cursor-pointer ml-1"
-        > */}
-          <span
-            onClick={() => navigate("/login")}
-            style={{ cursor: "pointer", color: "blue" }}
-          >
-            Login
-          </span>
-        </p>
-      </form>
+        {showPassword ? "Hide" : "Show"}
+      </span>
     </div>
+
+    {/* Button */}
+    <button className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md hover:shadow-lg">
+      Create Account
+    </button>
+
+    {/* Footer */}
+    <p className="text-sm text-center mt-4">
+      Already have an account?
+      <span
+        onClick={() => navigate("/login")}
+        className="text-blue-500 cursor-pointer ml-1 hover:underline"
+      >
+        Login
+      </span>
+    </p>
+  </form>
+</div>
   );
 };
 
