@@ -152,53 +152,77 @@ const handleEdit = async (id, updatedData) => {
 };
 
   return (
-    <div className="min-h-screen bg-[#f9f9f9f9]">
-      <Navbar setIsLogin={setIsLogin} setSearch={setSearch} />
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200">
+  <Navbar setIsLogin={setIsLogin} setSearch={setSearch} />
 
-      {/* Todo Form */}
-      <Todo addTask={addTask} />
+  {/* Page Container */}
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <h2 className="text-2xl font-semibold text-center mb-4">Your Tasks</h2>
-
-        {/* Task List */}
-       {Array.isArray(tasks) &&
-  currentTasks.map((task) =>
-    task ? (
-      <TodoCards
-        key={task._id}
-        task={task}
-        onDelete={handleDelete}
-        onComplete={handleComplete}
-         onEdit={handleEdit}
-      />
-    ) : null
-  )}
-  <div className="flex flex-wrap justify-center gap-3 mt-6">
-
-    <button
-      onClick={() => setCurrentPage(currentPage - 1)}
-      disabled={currentPage === 1}
-      className="px-3 py-1 bg-gray-300 rounded"
-    >
-      Prev
-    </button>
-
-    <span className="font-semibold">
-      Page {currentPage}
-    </span>
-
-    <button
-      onClick={() => setCurrentPage(currentPage + 1)}
-      disabled={indexOfLastTask >= tasks.length}
-      className="px-3 py-1 bg-gray-300 rounded"
-    >
-      Next
-    </button>
-
-  </div>
+    {/* Top Section */}
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+      <h2 className="text-3xl font-bold text-gray-800">Your Tasks</h2>
+      
+      {/* Stats Card (optional look upgrade) */}
+      <div className="bg-white shadow-md rounded-xl px-4 py-2 text-sm text-gray-600">
+        Total: {tasks.length}
       </div>
     </div>
+
+    {/* Add Task Card */}
+    <div className="bg-white shadow-lg rounded-xl p-5 mb-6">
+      <Todo addTask={addTask} />
+    </div>
+
+    {/* Tasks Grid */}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {Array.isArray(tasks) &&
+        currentTasks.map((task) =>
+          task ? (
+            <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-200 p-4">
+              <TodoCards
+                key={task._id}
+                task={task}
+                onDelete={handleDelete}
+                onComplete={handleComplete}
+                onEdit={handleEdit}
+              />
+            </div>
+          ) : null
+        )}
+    </div>
+
+    {/* Empty State */}
+    {tasks.length === 0 && (
+      <p className="text-center text-gray-500 mt-10">
+        No tasks yet. Add your first task 🚀
+      </p>
+    )}
+
+    {/* Pagination */}
+    <div className="flex justify-center items-center gap-4 mt-8">
+      <button
+        onClick={() => setCurrentPage(currentPage - 1)}
+        disabled={currentPage === 1}
+        className="px-4 py-2 bg-white shadow rounded-lg hover:bg-gray-100 disabled:opacity-50"
+      >
+        Prev
+      </button>
+
+      <span className="font-medium text-gray-700">
+        Page {currentPage}
+      </span>
+
+      <button
+        onClick={() => setCurrentPage(currentPage + 1)}
+        disabled={indexOfLastTask >= tasks.length}
+        className="px-4 py-2 bg-white shadow rounded-lg hover:bg-gray-100 disabled:opacity-50"
+      >
+        Next
+      </button>
+    </div>
+
+  </div>
+</div>
   );
 };
 
