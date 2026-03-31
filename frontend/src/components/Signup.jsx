@@ -52,63 +52,79 @@ const Signup = ({ setIsLogin }) => {
   };
 
   return (
-   <div className="min-h-screen flex items-center justify-center bg-gray-100">
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300">
   <form
     onSubmit={handleSubmit}
-    className="bg-white p-8 rounded-xl shadow-md w-96"
+    className="bg-white/80 backdrop-blur-lg border border-gray-200 shadow-xl rounded-2xl p-8 w-96"
   >
-    <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+    {/* Heading */}
+    <h2 className="text-3xl font-bold text-center mb-2 text-gray-800">
+      Create Account ✨
+    </h2>
+    <p className="text-sm text-gray-500 text-center mb-6">
+      Signup to get started
+    </p>
 
     {/* Username */}
-    <input
-      type="text"
-      name="username"
-      placeholder="Enter name"
-      className="w-full border p-3 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-      value={signup.username}
-      onChange={handleChange}
-    />
+    <div className="mb-4">
+      <label className="text-sm text-gray-600">Username</label>
+      <input
+        type="text"
+        name="username"
+        placeholder="Enter your name"
+        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
+        value={signup.username}
+        onChange={handleChange}
+      />
+    </div>
 
     {/* Email */}
-    <input
-      type="email"
-      name="email"
-      placeholder="Enter email"
-      className="w-full border p-3 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-      value={signup.email}
-      onChange={handleChange}
-    />
+    <div className="mb-4">
+      <label className="text-sm text-gray-600">Email</label>
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        className="w-full mt-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
+        value={signup.email}
+        onChange={handleChange}
+      />
+    </div>
 
     {/* Password */}
-    <div className="relative mb-4">
+    <div className="mb-4 relative">
+      <label className="text-sm text-gray-600">Password</label>
       <input
         type={showPassword ? "text" : "password"}
         name="password"
-        placeholder="Enter password"
-        className="w-full border p-3 pr-16 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+        placeholder="Enter your password"
+        className="w-full mt-1 border border-gray-300 p-3 pr-16 rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition"
         value={signup.password}
         onChange={handleChange}
       />
 
       <span
         onClick={() => setShowPassword(!showPassword)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-sm text-gray-600 hover:text-black"
+        className="absolute right-4 top-[38px] cursor-pointer text-sm text-gray-500 hover:text-black"
       >
         {showPassword ? "Hide" : "Show"}
       </span>
     </div>
 
     {/* Button */}
-    <button className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md hover:shadow-lg">
+    <button
+      type="submit"
+      className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md hover:shadow-lg"
+    >
       Create Account
     </button>
 
     {/* Footer */}
-    <p className="text-sm text-center mt-4">
+    <p className="text-sm text-center mt-5 text-gray-600">
       Already have an account?
       <span
         onClick={() => navigate("/login")}
-        className="text-blue-500 cursor-pointer ml-1 hover:underline"
+        className="ml-1 text-black font-medium cursor-pointer hover:underline"
       >
         Login
       </span>
