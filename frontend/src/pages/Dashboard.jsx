@@ -64,8 +64,6 @@ const addTask = async (task) => {
 
     const data = await res.json();
 
-    console.log("ADD RESPONSE:", data); // 🔥 check karo
-
     if (data.success && data.task) {
       setTasks((prev) => [...prev, data.task]);
       toast.success("Task added successfully ✅");
@@ -125,7 +123,7 @@ const handleEdit = async (id, updatedData) => {
   try {
 
     const res = await fetch(
-      `https://todo-app-1-k0d4.onrender.com/api/tasks/updateTask/${id}`,
+      `https://todo-app-1-k0d4.onrender.com/api/tasks/${id}`,
       {
         method: "PUT",
         headers: {
