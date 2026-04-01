@@ -165,9 +165,9 @@ const handleEdit = async (id, updatedData) => {
     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
       <h2 className="text-3xl font-bold text-gray-800">Your Tasks</h2>
       
-      {/* Stats Card (optional look upgrade) */}
-      <div className="bg-white shadow-md rounded-xl px-4 py-2 text-sm text-gray-600">
-        Total: {tasks.length}
+      {/* Stats Card */}
+      <div className="bg-white shadow-sm border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-600">
+        Total Tasks: {tasks ? tasks.length : 0}
       </div>
     </div>
 
@@ -197,10 +197,14 @@ const handleEdit = async (id, updatedData) => {
     </div>
 
     {/* Empty State */}
-    {tasks.length === 0 && (
-      <p className="text-center text-gray-500 mt-10">
-        No tasks yet. Add your first task 🚀
-      </p>
+    {(!tasks || tasks.length === 0) && (
+      <div className="flex flex-col items-center justify-center py-16 px-4 border-2 border-dashed border-gray-300 rounded-2xl bg-white/50 backdrop-blur-sm mt-8">
+        <svg className="w-16 h-16 text-indigo-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+        <p className="text-gray-600 font-medium text-lg">No tasks yet</p>
+        <p className="text-gray-500 text-sm mt-1">Add your first task above to get started 🚀</p>
+      </div>
     )}
 
     {/* Pagination */}
@@ -208,9 +212,9 @@ const handleEdit = async (id, updatedData) => {
       <button
         onClick={() => setCurrentPage(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-4 py-2 bg-white shadow rounded-lg hover:bg-gray-100 disabled:opacity-50"
+        className="text-sm font-medium px-5 py-2.5 bg-white text-gray-700 shadow-sm border border-gray-200 rounded-lg hover:bg-gray-50 hover:text-indigo-600 disabled:opacity-50 disabled:hover:text-gray-700 transition duration-200"
       >
-        Prev
+        Previous
       </button>
 
       <span className="font-medium text-gray-700">
@@ -219,8 +223,8 @@ const handleEdit = async (id, updatedData) => {
 
       <button
         onClick={() => setCurrentPage(currentPage + 1)}
-        disabled={indexOfLastTask >= tasks.length}
-        className="px-4 py-2 bg-white shadow rounded-lg hover:bg-gray-100 disabled:opacity-50"
+        disabled={indexOfLastTask >= (tasks ? tasks.length : 0)}
+        className="text-sm font-medium px-5 py-2.5 bg-white text-gray-700 shadow-sm border border-gray-200 rounded-lg hover:bg-gray-50 hover:text-indigo-600 disabled:opacity-50 disabled:hover:text-gray-700 transition duration-200"
       >
         Next
       </button>

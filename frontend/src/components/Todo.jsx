@@ -43,7 +43,7 @@ const Todo = ({ addTask }) => {
 
   return (
   <div className="mt-3">
-    <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
+    <h2 className="text-xl font-bold text-gray-800 mb-4 text-center tracking-tight">
       Add New Task
     </h2>
     <div className="flex justify-center">
@@ -60,7 +60,7 @@ const Todo = ({ addTask }) => {
         placeholder="Title"
         value={data.title}
         onChange={handleInput}
-        className="flex-1 border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm"
+        className="flex-1 border border-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-colors bg-gray-50/50 text-sm"
       />
 
       {/* Description (auto expand) */}
@@ -74,14 +74,13 @@ const Todo = ({ addTask }) => {
           e.target.style.height = e.target.scrollHeight + "px";
         }}
         rows="1"
-        className="flex-1 border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm resize-none overflow-hidden"
+        className="flex-1 border border-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-colors bg-gray-50/50 text-sm resize-none overflow-hidden"
       />
 
-      {/* Button */}
       <button
-        className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition text-sm whitespace-nowrap"
+        className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-200 font-medium text-sm whitespace-nowrap shadow-md hover:shadow-lg"
       >
-        Add
+        Add Task
       </button>
     </div>
   </form>
