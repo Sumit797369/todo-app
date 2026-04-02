@@ -42,14 +42,14 @@ const Todo = ({ addTask }) => {
   };
 
   return (
-  <div className="mt-3">
+  <div >
     <h2 className="text-xl font-bold text-gray-800 mb-4 text-center tracking-tight">
       Add New Task
     </h2>
-    <div className="flex justify-center">
+    <div>
   <form
     onSubmit={handleAdd}
-    className="bg-white shadow-md rounded-xl px-4 py-3 w-full max-w-3xl"
+    
   >
     <div className="flex flex-col sm:flex-row gap-3 items-center">
 
