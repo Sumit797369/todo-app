@@ -11,7 +11,7 @@ const Navbar = ({ setIsLogin,setSearch }) => {
     navigate("/login");
   };
   return (
-    <nav className="fixed top-0 left-0 w-full flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm gap-3 z-50">
+    <nav className="fixed top-0 left-0 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm gap-3 z-50">
 
   {/* Logo */}
   <h1 className="text-2xl font-black text-gray-800 tracking-tight cursor-pointer">
