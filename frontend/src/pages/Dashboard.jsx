@@ -172,7 +172,7 @@ const Dashboard = ({ setIsLogin }) => {
           <>
             {/* Add Task Card */}
             <div className="bg-white shadow-lg rounded-xl p-5 mb-6">
-              <Todo addTask={addTask} />
+              <Todo addTask={addTask} loading={loading} />
             </div>
 
             {/* Tasks Grid */}

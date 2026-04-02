@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-const Todo = ({ addTask }) => {
+const Todo = ({ addTask,loading }) => {
 
   const [data, setData] = useState({
     title: "",
@@ -78,10 +78,16 @@ const Todo = ({ addTask }) => {
       />
 
       <button
-        className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-200 font-medium text-sm whitespace-nowrap shadow-md hover:shadow-lg"
-      >
-        Add Task
-      </button>
+  disabled={loading}
+  className={`px-6 py-3 rounded-lg font-medium text-sm whitespace-nowrap shadow-md transition duration-200 
+  ${loading 
+    ? "bg-indigo-400 cursor-not-allowed"  
+    : "bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg text-white"
+  }`}
+>
+  {loading ? "Adding..." : "Add Task"} 
+</button>
+
     </div>
   </form>
     </div>
