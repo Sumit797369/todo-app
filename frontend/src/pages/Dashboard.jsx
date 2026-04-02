@@ -157,7 +157,7 @@ const handleEdit = async (id, updatedData) => {
   <Navbar setIsLogin={setIsLogin} setSearch={setSearch} />
 
   {/* Page Container */}
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 py-6">
 
     {/* Add Task Card */}
     <div className="bg-white shadow-lg rounded-xl p-5 mb-6">
