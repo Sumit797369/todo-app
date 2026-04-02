@@ -159,8 +159,15 @@ const handleEdit = async (id, updatedData) => {
   {/* Page Container */}
   <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-
-   
+    {/* Top Section */}
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+      <h2 className="text-3xl font-bold text-gray-800">Your Tasks</h2>
+      
+      {/* Stats Card */}
+      <div className="bg-white shadow-sm border border-gray-200 rounded-xl px-4 py-2 text-sm font-medium text-gray-600">
+        Total Tasks: {tasks ? tasks.length : 0}
+      </div>
+    </div>
 
     {/* Add Task Card */}
     <div className="bg-white shadow-lg rounded-xl p-5 mb-6">
